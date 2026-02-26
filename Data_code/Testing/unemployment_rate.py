@@ -1,7 +1,7 @@
 import pandas as pd
 
-input_path = "C:/Users/teaga/OneDrive/Documents/VSCode/Math189/189 Project/Data/Raw/"
-output_path = "C:/Users/teaga/OneDrive/Documents/VSCode/Math189/189 Project/Data/Intermediate/"
+input_path = "../Data/Raw/"
+output_path = "../Data/Intermediate/"
 
 input_file = "UNRATE.csv" #FRED
 output_file = "unemp_rate_cleaned.csv"
@@ -27,4 +27,5 @@ df = df.rename(columns={'observation_date': 'date'})
 
 # Save cleaned data to a new file
 df.to_csv(output_path + output_file, index=False)
+
 print(f"\nCleaned data saved to: {output_path + output_file}")
