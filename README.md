@@ -1,2 +1,2 @@
 Group Members
-Kento Bushey
+*Kento Bushey
