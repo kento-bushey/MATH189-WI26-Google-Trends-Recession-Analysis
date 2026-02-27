@@ -1,3 +1,1 @@
-Group Members:
 
--Kento Bushey
