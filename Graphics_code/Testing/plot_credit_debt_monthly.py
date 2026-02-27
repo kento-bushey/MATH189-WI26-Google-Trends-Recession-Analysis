@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import os
 
 # Path to the CSV
-csv_file = "credit_and_debt_monthly_2004_2026.csv"
-csv_path = os.path.join(os.path.dirname(__file__), "../../Data/Raw", csv_file)
+csv_file = "credit_and_debt.csv"
+csv_path = os.path.join(os.path.dirname(__file__), "../../Data/Raw/Keywords/Credit_and_debt", csv_file)
 
 # Load data
 data = pd.read_csv(csv_path)
