@@ -20,7 +20,7 @@ input_csvs = [
 unemp_path = "../../Data/Intermediate/unemp_rate_cleaned.csv"
 
 # Output directory
-output_dir = "../../Data/Intermediate/Keywords"
+output_dir = "../../Data/Intermediate/Keywords/First_differences"
 os.makedirs(output_dir, exist_ok=True)
 
 # Load unemployment data once

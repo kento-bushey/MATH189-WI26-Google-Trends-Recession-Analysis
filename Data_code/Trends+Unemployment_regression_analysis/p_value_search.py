@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 # Folder containing regression summaries
-summary_folder = "../../Data/Intermediate/Keywords"
+summary_folder = "../../Data/Intermediate/Keywords/First_differences_percent" # Project/Data/Intermediate/Keywords/First_differences_percent
 
 all_results = []
 

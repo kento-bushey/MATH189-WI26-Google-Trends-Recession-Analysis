@@ -1,24 +1,38 @@
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 import os
 
-# Path to the CSV
-csv_file = "credit_and_debt.csv"
-csv_path = os.path.join(os.path.dirname(__file__), "../../Data/Raw/Keywords/Credit_and_debt", csv_file)
+# ====== PATH ======
+folder_path = os.path.join(os.path.dirname(__file__), "../../Data/Raw/Keywords/Credit_and_debt")
 
-# Load data
-data = pd.read_csv(csv_path)
-data["date"] = pd.to_datetime(data["date"])
-data = data.set_index("date")
+# ====== LOAD ALL CSVs IN FOLDER ======
+all_series = {}
 
-# Plot
-plt.figure(figsize=(14, 7))
+for filename in os.listdir(folder_path):
+    if not filename.endswith(".csv"):
+        continue
+    df = pd.read_csv(os.path.join(folder_path, filename), parse_dates=["date"])
+    df = df.set_index("date")
+    value_col = df.columns[0]
+    all_series[os.path.splitext(filename)[0]] = df[value_col]
+
+data = pd.DataFrame(all_series).sort_index()
+average = data.mean(axis=1)
+
+# ====== PLOT ======
+fig, ax = plt.subplots(figsize=(14, 7))
+
+# Faded individual keyword lines
 for col in data.columns:
-    plt.plot(data.index, data[col], label=col)
+    ax.plot(data.index, data[col], color="steelblue", alpha=0.15, linewidth=0.8)
 
-plt.xlabel("Date")
-plt.ylabel("Google Trends Interest")
-plt.title("Credit & Debt Keywords (Monthly, 2004-2026)")
-plt.legend(loc="upper left", fontsize="small", ncol=2)
+# Bold average line on top
+ax.plot(average.index, average, color="crimson", linewidth=2.5, label="Category average", zorder=5)
+
+ax.set_xlabel("Date")
+ax.set_ylabel("Google Trends Interest")
+ax.set_title("Credit & Debt Keywords (Monthly, 2004-2026)")
+ax.legend(fontsize="small")
 plt.tight_layout()
 plt.show()

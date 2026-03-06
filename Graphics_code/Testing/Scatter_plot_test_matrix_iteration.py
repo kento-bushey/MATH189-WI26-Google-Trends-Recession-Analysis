@@ -21,7 +21,7 @@ keyword_folder_list = [
 ]
 
 unemp_path = "../../Data/Intermediate/unemp_rate_cleaned.csv"
-output_dir = "../../Graphics/Testing"
+output_dir = "../../Graphics/Testing/Regression_matrices"
 os.makedirs(output_dir, exist_ok=True)
 
 # ====== LOAD UNEMPLOYMENT ======
