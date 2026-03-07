@@ -61,7 +61,10 @@ for folder in folders:
         axes[j].axis("off")
 
     fig.suptitle(f"{folder} — Before & After Seasonal Correction", fontsize=13, fontweight="bold")
-    plt.tight_layout()
+    plt.tight_layout(rect=[0, 0, 1, 0.97])
+
+    out_path = os.path.join(output_dir, f"{folder}_before_and_after.png")
+    plt.savefig(out_path, dpi=300, bbox_inches="tight")
 
     out_path = os.path.join(output_dir, f"{folder}_before_and_after.png")
     plt.savefig(out_path, dpi=150, bbox_inches="tight")

@@ -56,3 +56,11 @@ results_df = pd.DataFrame([{
 
 results_df.to_csv(os.path.join(output_dir, "monthly_seasonal_pattern.csv"), index=False)
 print("\nSaved to Data/Corrected_for_yearly_pattern/monthly_seasonal_pattern.csv")
+
+from scipy import stats
+
+groups = [monthly_totals[m] for m in range(1, 13)]
+f_stat, p_value = stats.f_oneway(*groups)
+print(f"\nOne-way ANOVA:")
+print(f"F-statistic: {f_stat:.4f}")
+print(f"P-value:     {p_value:.4e}")
