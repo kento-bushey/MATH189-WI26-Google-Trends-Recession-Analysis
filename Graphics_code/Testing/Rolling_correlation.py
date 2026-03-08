@@ -7,16 +7,16 @@ import math
 
 # Keywords
 keyword_folder_list = [
-    "../../Data/Raw/Keywords/credit_and_debt",
-    "../../Data/Raw/Keywords/frugality",
-    "../../Data/Raw/Keywords/government_support",
-    "../../Data/Raw/Keywords/housing_rent_and_stress",
-    "../../Data/Raw/Keywords/inflation",
-    "../../Data/Raw/Keywords/insurance",
-    "../../Data/Raw/Keywords/investing_and_markets",
-    "../../Data/Raw/Keywords/jobs",
-    "../../Data/Raw/Keywords/luxuries",
-    "../../Data/Raw/Keywords/travel"
+    "../../Data/Corrected_for_yearly_pattern/Keywords/Credit_and_debt",
+    "../../Data/Corrected_for_yearly_pattern/Keywords/Frugality",
+    "../../Data/Corrected_for_yearly_pattern/Keywords/Government_support",
+    "../../Data/Corrected_for_yearly_pattern/Keywords/Housing_rent_and_stress",
+    "../../Data/Corrected_for_yearly_pattern/Keywords/Inflation",
+    "../../Data/Corrected_for_yearly_pattern/Keywords/Insurance",
+    "../../Data/Corrected_for_yearly_pattern/Keywords/Investing_and_markets",
+    "../../Data/Corrected_for_yearly_pattern/Keywords/Jobs",
+    "../../Data/Corrected_for_yearly_pattern/Keywords/Luxuries",
+    "../../Data/Corrected_for_yearly_pattern/Keywords/Travel"
 ]
 
 gdp_path = "../../Data/Intermediate/GDP_YoY_pct_cleaned.csv"
